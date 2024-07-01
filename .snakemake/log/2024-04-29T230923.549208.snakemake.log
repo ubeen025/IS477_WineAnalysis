@@ -1,0 +1,35 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count
+--------------------  -------
+all                         1
+visualization_export        1
+total                       2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 29 23:09:23 2024]
+localrule visualization_export:
+    output: Visualization Results/image_1.png, Visualization Results/image_2.png, Visualization Results/image_3.png, Visualization Results/image_4.png, Visualization Results/image_5.png, Visualization Results/image_6.png
+    jobid: 1
+    reason: Missing output files: Visualization Results/image_4.png, Visualization Results/image_2.png, Visualization Results/image_3.png, Visualization Results/image_5.png, Visualization Results/image_1.png, Visualization Results/image_6.png
+    resources: tmpdir=/var/folders/y8/mtn39rf91g31yxhft418hdd40000gn/T
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule visualization_export in file /Users/danielchoi/Desktop/IS477 project/is477-sp24-Choi_Oh/Snakefile, line 25:
+Job 1  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+Visualization Results/image_1.png (missing locally, parent dir contents: )
+Visualization Results/image_2.png (missing locally, parent dir contents: )
+Visualization Results/image_3.png (missing locally, parent dir contents: )
+Visualization Results/image_4.png (missing locally, parent dir contents: )
+Visualization Results/image_5.png (missing locally, parent dir contents: )
+Visualization Results/image_6.png (missing locally, parent dir contents: )
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-04-29T230923.549208.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

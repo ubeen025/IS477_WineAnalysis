@@ -1,0 +1,34 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count
+--------------------  -------
+all                         1
+visualization_export        1
+total                       2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 29 22:58:04 2024]
+localrule visualization_export:
+    output: Visualization Results/image_1.png, Visualization Results/image_2.png, Visualization Results/image_3.png, Visualization Results/image_4.png, Visualization Results/image_5.png, Visualization Results/image_6.png
+    jobid: 1
+    reason: Missing output files: Visualization Results/image_2.png, Visualization Results/image_6.png, Visualization Results/image_4.png, Visualization Results/image_5.png, Visualization Results/image_1.png, Visualization Results/image_3.png
+    resources: tmpdir=/var/folders/y8/mtn39rf91g31yxhft418hdd40000gn/T
+
+[Mon Apr 29 22:58:15 2024]
+Error in rule visualization_export:
+    jobid: 1
+    output: Visualization Results/image_1.png, Visualization Results/image_2.png, Visualization Results/image_3.png, Visualization Results/image_4.png, Visualization Results/image_5.png, Visualization Results/image_6.png
+    shell:
+        jupyter nbconvert --to notebook --execute notebooks/visualization_export.ipynb --output visualization_export_executed.ipynb
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-04-29T225804.063174.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

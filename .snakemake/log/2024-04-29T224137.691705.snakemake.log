@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count
+--------------------  -------
+all                         1
+data_acquisition            1
+data_analysis               1
+visualization_export        1
+total                       4
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 29 22:41:37 2024]
+localrule data_acquisition:
+    output: data/WineDataset.csv, data/WineDataset.csv.sha, data/winemag-data_first150k.csv, data/winemag-data_first150k.csv.sha, data/winemag-data-130k-v2.csv, data/winemag-data-130k-v2.csv.sha, data/winemag-data-130k-v2.json, data/winemag-data-130k-v2.json.sha
+    jobid: 3
+    reason: Missing output files: data/WineDataset.csv, data/winemag-data-130k-v2.json
+    resources: tmpdir=/var/folders/y8/mtn39rf91g31yxhft418hdd40000gn/T
+
+[Mon Apr 29 22:41:55 2024]
+Error in rule data_acquisition:
+    jobid: 3
+    output: data/WineDataset.csv, data/WineDataset.csv.sha, data/winemag-data_first150k.csv, data/winemag-data_first150k.csv.sha, data/winemag-data-130k-v2.csv, data/winemag-data-130k-v2.csv.sha, data/winemag-data-130k-v2.json, data/winemag-data-130k-v2.json.sha
+    shell:
+        jupyter nbconvert --to notebook --execute notebooks/Data_Acquisition.ipynb --output notebooks/Data_Acquisition_executed.ipynb
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-04-29T224137.691705.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

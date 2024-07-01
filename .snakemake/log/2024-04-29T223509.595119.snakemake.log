@@ -1,0 +1,39 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                     count
+--------------------  -------
+all                         1
+data_acquisition            1
+data_analysis               1
+visualization_export        1
+total                       4
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Apr 29 22:35:09 2024]
+localrule data_acquisition:
+    output: data/WineDataset.csv, data/WineDataset.csv.sha, data/winemag-data_first150k.csv, data/winemag-data_first150k.csv.sha, data/winemag-data-130k-v2.csv, data/winemag-data-130k-v2.csv.sha, data/winemag-data-130k-v2.json, data/winemag-data-130k-v2.json.sha
+    jobid: 3
+    reason: Missing output files: data/winemag-data-130k-v2.json, data/WineDataset.csv
+    resources: tmpdir=/var/folders/y8/mtn39rf91g31yxhft418hdd40000gn/T
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule data_acquisition in file /Users/danielchoi/Desktop/IS477 project/is477-sp24-Choi_Oh/Snakefile, line 5:
+Job 3  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+data/WineDataset.csv (missing locally, parent dir contents: )
+data/WineDataset.csv.sha (missing locally, parent dir contents: )
+data/winemag-data_first150k.csv (missing locally, parent dir contents: )
+data/winemag-data_first150k.csv.sha (missing locally, parent dir contents: )
+data/winemag-data-130k-v2.csv (missing locally, parent dir contents: )
+data/winemag-data-130k-v2.csv.sha (missing locally, parent dir contents: )
+data/winemag-data-130k-v2.json (missing locally, parent dir contents: )
+data/winemag-data-130k-v2.json.sha (missing locally, parent dir contents: )
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2024-04-29T223509.595119.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.
